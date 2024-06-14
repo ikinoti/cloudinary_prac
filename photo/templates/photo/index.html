@@ -1,1 +1,10 @@
 <h1>Cloudinary images down below</h1>
+
+{% for pic in photo %}
+    <h2> {{ pic.title }} </h2>
+
+    <h3> {{ pic.description }} </h3>
+
+    <img src="{{ pic.image.url }}" alt="picture">
+
+{% endfor %}
