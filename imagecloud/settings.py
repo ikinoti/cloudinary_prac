@@ -10,9 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-from pathlib import Path
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -44,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'photo',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +133,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+cloudinary.config(
+    cloud_name = str(os.getenv('cloud_name')),
+    api_key = str(os.getenv('api_key')),
+    api_secret = str(os.getenv('Sapi_secret'))
+)
