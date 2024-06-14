@@ -6,3 +6,6 @@ class Library(models.Model):
     description = models.CharField(max_length=255)
     image = CloudinaryField('image')
 
+    def __str__(self):
+        return self.title
+
