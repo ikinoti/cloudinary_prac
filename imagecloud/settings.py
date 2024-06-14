@@ -34,7 +34,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -135,7 +135,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 cloudinary.config(
-    cloud_name = str(os.getenv('cloud_name')),
-    api_key = str(os.getenv('api_key')),
-    api_secret = str(os.getenv('Sapi_secret'))
+    cloud_name = os.getenv('cloud_name'),
+    api_key = os.getenv('api_key'),
+    api_secret = os.getenv('api_secret')
 )
